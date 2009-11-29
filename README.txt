@@ -12,6 +12,8 @@ This fork combines the support for multiple images to be viewed as a gallery and
 
 Requires at least jQuery 1.2
 
+Numbered versions can be found in the 'releases' folder with all included images/scripts/stylesheets.
+
 
  === How to use ===
 
@@ -31,6 +33,14 @@ Lightbox-ize the links on page load.
   $(document).ready(function($) {
     $('a[rel=facebox]').facebox();
   }); 
+</script>
+
+All objects on the page with the same rel tag will be turned into a gallery/slideshow with arrows to browse and click on the image to go to next. If you wish to have multiple different and disconnected faceboxes on a single page just give them all different rel tags and load them separately.
+<script type="text/javascript">
+  $(document).ready(function($) {
+    $('a[rel=faceboxText]').facebox();
+    $('a[rel=faceboxImages]').facebox();
+  });
 </script>
 
 
