@@ -61,3 +61,4 @@ Supported options are:
       previousImage : Path to override the default previous arrow image for the gallery
       imageTypes    : Array of strings which represent the file extensions to be recognized as images.
       faceboxHtml   : Block of HTML to draw as the Facebox overlay. (this should not be changed unless you know what elements are expected with what CSS attributes).
+
