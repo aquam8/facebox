@@ -18,10 +18,10 @@ Numbered versions can be found in the 'releases' folder with all included images
  === How to use ===
 
 Include the Facebox javascript after the jQuery core library.
-<script src="/javascripts/facebox.js" type="text/javascript"></script>
+<script src="javascripts/facebox.js" type="text/javascript"></script>
 
 Include the stylesheet.
-<link href="/stylesheets/facebox.css" rel="stylesheet" type="text/css" />
+<link href="stylesheets/facebox.css" rel="stylesheet" type="text/css" />
 
 Copy over all the images from the images folder. Edit the .css file to match your directory structure if required.
 
