@@ -5,8 +5,8 @@ if [ -z "$1" ]; then
 fi
 
 mkdir facebox
-cp images/{b,bl,br,tl,tr}.png facebox
-cp images/{loading,closelabel}.gif facebox
+cp images/*.png facebox
+cp images/*.gif facebox
 cp javascripts/facebox.js facebox
 cp stylesheets/facebox.css facebox
 cp README.txt facebox
