@@ -72,13 +72,30 @@
         </div>
 
         <div class="example">
-          <h2>Images</h2>
+          <h2>Image</h2>
 
-          <p> <a href="stairs.jpg" rel="facebox">View '/facebox/stairs.jpg' in the Facebox</a> </p>
+          <p> <a href="" rel="faceboxSingle"><img src="" /></a> </p>
 
           <div class="code">
             <h3>The Code</h3>
             <code>&lt;a href="stairs.jpg" rel="facebox"&gt;text&lt;/a&gt;</code>
+          </div>
+        </div>
+
+        <div class="example">
+          <h2>Image Gallery</h2>
+
+          <p>
+            <a href="" rel="faceboxGallery"><img src="" /></a>
+            <a href="" rel="faceboxGallery"><img src="" /></a>
+            <a href="" rel="faceboxGallery"><img src="" /></a>
+            <a href="" rel="faceboxGallery"><img src="" /></a>
+          <div class="code">
+            <h3>The Code</h3>
+              <code>
+                &lt;a href="full_1.jpg" rel="facebox"&gt;&lt;img src="thumbnail_1.jpg" /&gt;&lt;/a&gt;<br />
+                &lt;a href="full_2.jpg" rel="facebox"&gt;&lt;img src="thumbnail_2.jpg" /&gt;&lt;/a&gt;
+              </code>
           </div>
         </div>
 
@@ -112,8 +129,8 @@
           <div class="code">
             <code>
               &lt;script src="jquery.js" type="text/javascript"&gt;&lt;/script&gt;<br/>
-              &lt;link href="/facebox/facebox.css" media="screen" rel="stylesheet" type="text/css"/&gt;<br/>
-              &lt;script src="/facebox/facebox.js" type="text/javascript"&gt;&lt;/script&gt;
+              &lt;link href="facebox.css" media="screen" rel="stylesheet" type="text/css"/&gt;<br/>
+              &lt;script src="facebox.js" type="text/javascript"&gt;&lt;/script&gt;
             </code>
           </div>
         </div>
@@ -126,32 +143,9 @@
           <div class="code">
             <code>
               jQuery(document).ready(function($) {<br/>
-                &nbsp;&nbsp;$('a[rel*=facebox]').facebox() <br/>
+                &nbsp;&nbsp;$('a[rel=facebox]').facebox() <br/>
               })
             </code>
-          </div>
-        </div>
-
-        <div class="example">
-          <h2>Extra Classes</h2>
-          <p> 
-            You can give the facebox container an extra class (to fine-tune the display of reusable remote pages)
-            with the <code>facebox[.class]</code> rel syntax.
-          </p>
-          <p>
-            Maybe your <i>Terms and Conditions</i> can be loaded standalone or via Facebox.  When loaded in Facebox, 
-            you might want to tweak some styles -- like making the <code>h1</code> positioned absolutely?  
-            We do this on FamSpam.
-          </p>
-          <p>
-            <a href="/facebox/remote.html" rel="facebox[.bolder]">
-              View an an example which makes the <code>remote.html</code> page bigger and bolder using css.
-            </a>
-          </p>
-
-          <div class="code">
-            <h3>The Code</h3>
-            <code>&lt;a href="remote.html" rel="facebox[.bolder]"&gt;text&lt;/a&gt;</code>
           </div>
         </div>
 
