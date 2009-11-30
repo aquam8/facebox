@@ -21,22 +21,13 @@
     // });
 
     jQuery(document).ready(function($) {
-      $('a[rel=facebox]').facebox({
-        closeImage : "images/closelabel.gif",
-        loadingImage : "images/loading.gif",
-        previousImage : "images/prev.png",
-        nextImage : "images/next.png"
-      }) 
-    })
-
-    jQuery(document).ready(function($) {
       $('a[rel=faceboxSingle]').facebox({
         closeImage : "images/closelabel.gif",
         loadingImage : "images/loading.gif",
         previousImage : "images/prev.png",
         nextImage : "images/next.png"
       }) 
-    })
+    });
 
     jQuery(document).ready(function($) {
       $('a[rel=faceboxGallery]').facebox({
@@ -45,7 +36,25 @@
         previousImage : "images/prev.png",
         nextImage : "images/next.png"
       }) 
-    })
+    });
+
+    jQuery(document).ready(function($) {
+      $('a[rel=faceboxDiv]').facebox({
+        closeImage : "images/closelabel.gif",
+        loadingImage : "images/loading.gif",
+        previousImage : "images/prev.png",
+        nextImage : "images/next.png"
+      }) 
+    });
+
+    jQuery(document).ready(function($) {
+      $('a[rel=faceboxAjax]').facebox({
+        closeImage : "images/closelabel.gif",
+        loadingImage : "images/loading.gif",
+        previousImage : "images/prev.png",
+        nextImage : "images/next.png"
+      }) 
+    });
 
   </script>
 </head>
@@ -131,7 +140,7 @@
         <div class="example">
           <h2>Divs</h2>
 
-          <p> <a href="#info" rel="facebox">View the 'info' div in the Facebox</a> </p>
+          <p> <a href="#info" rel="faceboxDiv">View the 'info' div in the Facebox</a> </p>
 
           <div class="code">
             <h3>The Code</h3>
@@ -142,7 +151,7 @@
         <div class="example">
           <h2>Ajaxes</h2>
 
-          <p> <a href="remote.html" rel="facebox">View 'remote.html' in the Facebox</a> </p>
+          <p> <a href="remote.html" rel="faceboxAjax">View 'remote.html' in the Facebox</a> </p>
 
           <div class="code">
             <h3>The Code</h3>
