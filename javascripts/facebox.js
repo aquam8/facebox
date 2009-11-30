@@ -324,7 +324,7 @@
     return function() {
       $('#facebox .image').click(function() { jump(position + 1) }).css('cursor', 'pointer');
       $('#facebox .info').html('' + (position + 1) + ' of ' + images.length);
-      $('#facebox .navigation').html('<img class="prev" src="' + $.facebox.settings.previousImage + '"/><img class="next" src="' + $.facebox.settings.nextImage + '"/>').find('img').css('cursor', 'pointer').end().find('.prev').click(function() { jump(position - 1); return false }).end().find('.next').click(function() { jump(position + 1); return false }).end();
+      $('#facebox .navigation').html('<img class="prev" src="' + $.facebox.settings.previousImage + '" alt="Previous"/><img class="next" src="' + $.facebox.settings.nextImage + '" alt="Next"/>').find('img').css('cursor', 'pointer').end().find('.prev').click(function() { jump(position - 1); return false }).end().find('.next').click(function() { jump(position + 1); return false }).end();
     }
   }
 
