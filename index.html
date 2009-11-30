@@ -14,10 +14,39 @@
   <script src="javascripts/facebox.js" type="text/javascript"></script>
 
   <script type="text/javascript">
+    // We have multiple different boxes on this page so each one needs to be initalized and named differently otherwise we'd end up with one big gallery.
+    // A simple page can just declare it with:
+    // jQuery(document).ready(function($) {
+    //    $('a[rel=facebox]').facebox();
+    // });
+
     jQuery(document).ready(function($) {
       $('a[rel=facebox]').facebox({
+        closeImage : "images/closelabel.gif",
+        loadingImage : "images/loading.gif",
+        previousImage : "images/prev.png",
+        nextImage : "images/next.png"
       }) 
     })
+
+    jQuery(document).ready(function($) {
+      $('a[rel=faceboxSingle]').facebox({
+        closeImage : "images/closelabel.gif",
+        loadingImage : "images/loading.gif",
+        previousImage : "images/prev.png",
+        nextImage : "images/next.png"
+      }) 
+    })
+
+    jQuery(document).ready(function($) {
+      $('a[rel=faceboxGallery]').facebox({
+        closeImage : "images/closelabel.gif",
+        loadingImage : "images/loading.gif",
+        previousImage : "images/prev.png",
+        nextImage : "images/next.png"
+      }) 
+    })
+
   </script>
 </head>
 
@@ -74,11 +103,11 @@
         <div class="example">
           <h2>Image</h2>
 
-          <p> <a href="" rel="faceboxSingle"><img src="" /></a> </p>
+          <p> <a href="demo_images/image.jpg" rel="faceboxSingle"><img src="demo_images/thumb.jpg" /></a> </p>
 
           <div class="code">
             <h3>The Code</h3>
-            <code>&lt;a href="stairs.jpg" rel="facebox"&gt;text&lt;/a&gt;</code>
+            <code>&lt;a href="image.jpg" rel="facebox"&gt;text&lt;/a&gt;</code>
           </div>
         </div>
 
@@ -86,10 +115,10 @@
           <h2>Image Gallery</h2>
 
           <p>
-            <a href="" rel="faceboxGallery"><img src="" /></a>
-            <a href="" rel="faceboxGallery"><img src="" /></a>
-            <a href="" rel="faceboxGallery"><img src="" /></a>
-            <a href="" rel="faceboxGallery"><img src="" /></a>
+            <a href="demo_images/image1.jpg" rel="faceboxGallery"><img src="demo_images/thumb1.jpg" /></a>
+            <a href="demo_images/image2.jpg" rel="faceboxGallery"><img src="demo_images/thumb2.jpg" /></a>
+            <a href="demo_images/image3.jpg" rel="faceboxGallery"><img src="demo_images/thumb3.jpg" /></a>
+            <a href="demo_images/image4.jpg" rel="faceboxGallery"><img src="demo_images/thumb4.jpg" /></a>
           <div class="code">
             <h3>The Code</h3>
               <code>
@@ -200,10 +229,6 @@
     </div>
 
     <div id="footer">
-      <p class="right">
-        <a href="mailto:chris@ozmm.org">Contact</a>
-      </p>
-
       <ul>
         <li> Code &copy;2007/2008 Chris Wanstrath </li>
         <li> Style &copy;2007 Facebook </li>

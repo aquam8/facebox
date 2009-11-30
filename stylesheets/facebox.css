@@ -1,30 +1,31 @@
 #facebox .b {
-  background:url(b.png);
+  background:url(../images/b.png);
 }
-
+ 
 #facebox .tl {
-  background:url(fbx-border-sprite.png) 0 0;
+  background:url(../images/fbx-border-sprite.png) 0 0;
   width: 10px; 
   height: 10px;
-}
-
+ }
+ 
 #facebox .tr {
-  background:url(fbx-border-sprite.png) -10px 0;
+  background:url(../images/fbx-border-sprite.png) -10px 0;
   width: 10px; 
   height: 10px;
-}
-
+ }
+ 
 #facebox .bl {
-  background:url(fbx-border-sprite.png) -20px 0;
+  background:url(../images/fbx-border-sprite.png) -20px 0;
+  width: 10px; 
+  height: 10px;
+}
+ 
+#facebox .br {
+  background:url(../images/fbx-border-sprite.png) -30px 0;
   width: 10px; 
   height: 10px;
 }
 
-#facebox .br {
-  background:url(fbx-border-sprite.png) -30px 0;
-  width: 10px; 
-  height: 10px;
-}
 
 #facebox {
   position: absolute;
@@ -40,6 +41,9 @@
 
 #facebox table {
   border-collapse: collapse;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
 }
 
 #facebox td {
@@ -75,6 +79,31 @@
 
 #facebox .footer img {
   vertical-align: middle;
+}
+
+#facebox .footer table {
+  width: 100%;
+}
+
+#facebox .footer table .tableLeft {
+  text-align: left;
+}
+
+#facebox .footer table .tableRight {
+  text-align: right;
+}
+
+#facebox .footer table .tableCenter {
+  text-align: center;
+}
+
+#facebox .navigation img {
+  padding-right: 10px; 
+}
+
+#facebox .info {
+  color: #595959;
+  font-size: 13px;
 }
 
 #facebox .tl, #facebox .tr, #facebox .bl, #facebox .br {

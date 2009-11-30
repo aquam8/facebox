@@ -3,18 +3,17 @@
  * version: 1.3 (26/11/2009)
  * @requires jQuery v1.2 or later
  *
- * Examples at http://famspam.com/facebox/
- *
  * Licensed under the MIT:
  *   http://www.opensource.org/licenses/mit-license.php
  *
  * Copyright 2007, 2008 Chris Wanstrath [ chris@ozmm.org ]
  *   Updated by Kevin McPhillips
+ *   http://github.com/kimos/facebox
  *
  * Usage:
  *  
  *  jQuery(document).ready(function() {
- *    jQuery('a[rel*=facebox]').facebox() 
+ *    jQuery('a[rel=facebox]').facebox() 
  *  })
  *
  *  <a href="#terms" rel="facebox">Terms</a>
@@ -85,10 +84,10 @@
     settings: {
       opacity       : 0,
       overlay       : true,
-      loadingImage  : '/facebox/loading.gif',
-      closeImage    : '/facebox/closelabel.gif',
-      nextImage     : '/facebox/next.gif',
-      previousImage : '/facebox/prev.gif',
+      loadingImage  : '/images/loading.gif',
+      closeImage    : '/images/closelabel.gif',
+      nextImage     : '/images/next.gif',
+      previousImage : '/images/prev.gif',
       imageTypes    : [ 'png', 'jpg', 'jpeg', 'gif' ],
       faceboxHtml   : '\
     <div id="facebox" style="display:none;"> \
@@ -108,7 +107,7 @@
                     <tr> \
                       <td class="tableLeft"><div class="navigation"></div></td> \
                       <td class="tableCenter"><div class="info"></div></td> \
-                      <td class="tableRight"><a href="#" class="close"><img src="/facebox/closelabel.gif" title="close" class="close_image" /></a></td> \
+                      <td class="tableRight"><a href="#" class="close"><img src="/images/closelabel.gif" title="close" class="close_image" /></a></td> \
                     </tr> \
                   </table> \
                 </div> \
@@ -131,7 +130,7 @@
 
       $('#facebox .content').empty()
       $('#facebox .body').children().hide().end().
-        append('<div class="loading"><img src="'+$.facebox.settings.loadingImage+'"/></div>')
+        append('<div class="loading"><img src="' + $.facebox.settings.loadingImage + '"/></div>')
 
       $('#facebox').css({
         top:	getPageScroll()[1] + (getPageHeight() / 20),
