@@ -333,6 +333,10 @@
   }
 
   function showOverlay() {
+    // IE 6 is so totally balls that SELECT elements are always in the foreground. Hide them on loading.
+    if ( $.browser.msie && /6.0/.test(navigator.userAgent) )
+      $("select").hide();
+
     if (skipOverlay()) return
 
     if ($('#facebox_overlay').length == 0) 
@@ -346,6 +350,10 @@
   }
 
   function hideOverlay() {
+    // Undo IE 6 hack.
+    if ( $.browser.msie && /6.0/.test(navigator.userAgent) )
+      $("select").show();
+
     if (skipOverlay()) return
 
     $('#facebox_overlay').fadeOut(200, function(){
