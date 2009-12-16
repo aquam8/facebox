@@ -130,7 +130,9 @@
   z-index: 99;
 }
 
-* html #facebox_overlay { /* ie6 hack */
+/* ie6 hacks */
+
+* html #facebox_overlay { 
   position: absolute;
   height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
 }
