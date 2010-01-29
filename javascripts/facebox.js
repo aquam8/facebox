@@ -84,6 +84,7 @@
     settings: {
       opacity       : 0,
       overlay       : true,
+      positionInfo   : function(position, total) { return position + ' of ' + total },
       loadingImage  : '/images/loading.gif',
       closeImage    : '/images/closelabel.gif',
       nextImage     : '/images/next.gif',
@@ -323,7 +324,7 @@
     
     return function() {
       $('#facebox .image').click(function() { jump(position + 1) }).css('cursor', 'pointer');
-      $('#facebox .info').html('' + (position + 1) + ' of ' + images.length);
+      $('#facebox .info').html($.facebox.settings.positionInfo(position + 1, images.length));
       $('#facebox .navigation').html('<img class="prev" src="' + $.facebox.settings.previousImage + '" alt="Previous"/><img class="next" src="' + $.facebox.settings.nextImage + '" alt="Next"/>').find('img').css('cursor', 'pointer').end().find('.prev').click(function() { jump(position - 1); return false }).end().find('.next').click(function() { jump(position + 1); return false }).end();
     }
   }
