@@ -1,21 +1,17 @@
 # Facebox
 
-Original Facebox plugin by:
-http://famspam.com/facebox/
-
 Forked by Kimos and can now be found:
-http://github.com/kimos/facebox
+[http://github.com/kimos/facebox](http://github.com/kimos/facebox)
 
-A Facebook-style Ligthbox script for jQuery.
+Original Facebox plugin by:
+[http://famspam.com/facebox/](http://famspam.com/facebox/)
 
-This fork combines the support for multiple images to be viewed as a gallery and for closing the modal window when clicking outside of the Facebox.
-
-Requires at least jQuery 1.2
+A Facebook-style Ligthbox script for jQuery.  This fork combines the support for multiple images to be viewed as a gallery and for closing the modal window when clicking outside of the Facebox.  Requires at least jQuery 1.2
 
 Numbered versions can be found in the 'releases' folder with all included images/scripts/stylesheets.
 
-Thanks to Jeroen van Dijk for his contributions.
-http://github.com/jeroenvandijk/
+Thanks to Jeroen van Dijk for his contributions:
+[http://github.com/jeroenvandijk/](http://github.com/jeroenvandijk/)
 
 
 ## How to use
