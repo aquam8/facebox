@@ -10,8 +10,10 @@ A Facebook-style Ligthbox script for jQuery.  This fork combines the support for
 
 Numbered versions can be found in the 'releases' folder with all included images/scripts/stylesheets.
 
-Thanks to Jeroen van Dijk for his contributions:
+Thanks to the following users for their contributions:
 [http://github.com/jeroenvandijk/](http://github.com/jeroenvandijk/)
+
+[http://github.com/lelutin/](http://github.com/lelutin/)
 
 
 ## How to use
@@ -54,15 +56,15 @@ Options can be passed into the Facebox call to customize behavior like so:
 
 Supported options are:
 
-opacity       : Opacity amount
-overlay       : Overlay boolean
-loadingImage  : Path to override the default throbber/loading image
-closeImage    : Path to override the default close image
-nextImage     : Path to override the default next arrow image for the gallery
-previousImage : Path to override the default previous arrow image for the gallery
-imageTypes    : Array of strings which represent the file extensions to be recognized as images.
-faceboxHtml   : Block of HTML to draw as the Facebox overlay. (this should not be changed unless you know what elements are expected with what CSS attributes).
-iframe        : Load an iframe in the facebox. Requires params like   iframe: { href: "http://some-site.com/", klass: "myframe" } 
+- opacity       : Opacity amount
+- overlay       : Overlay boolean
+- loadingImage  : Path to override the default throbber/loading image
+- closeImage    : Path to override the default close image
+- nextImage     : Path to override the default next arrow image for the gallery
+- previousImage : Path to override the default previous arrow image for the gallery
+- imageTypes    : Array of strings which represent the file extensions to be recognized as images.
+- faceboxHtml   : Block of HTML to draw as the Facebox overlay. (this should not be changed unless you know what elements are expected with what CSS attributes).
+- iframe        : Load an iframe in the facebox. Requires params like   iframe: { href: "http://some-site.com/", klass: "myframe" } 
 
 
 ## Releases
