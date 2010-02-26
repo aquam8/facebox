@@ -9,7 +9,7 @@ cp images/*.png facebox
 cp images/*.gif facebox
 cp javascripts/facebox.js facebox
 cp stylesheets/facebox.css facebox
-cp README.txt facebox
+cp README.markdown facebox
 tar -cf facebox-$1.tar facebox/
 gzip -9 facebox-$1.tar
 rm -rf facebox

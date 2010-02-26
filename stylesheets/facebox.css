@@ -130,6 +130,10 @@
   z-index: 99;
 }
 
+.facebox_iframe {
+  border: 0;
+}
+
 /* ie6 hacks */
 
 * html #facebox_overlay { 

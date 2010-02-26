@@ -69,7 +69,8 @@
   $.facebox = function(data, klass) {
     $.facebox.loading()
 
-    if (data.ajax) fillFaceboxFromAjax(data.ajax, klass)
+    if (data.iframe) fillFaceboxFromIFrame(data.iframe, klass)
+    else if (data.ajax) fillFaceboxFromAjax(data.ajax, klass)
     else if (data.image) fillFaceboxFromImage(data.image, klass)
     else if (data.div) fillFaceboxFromHref(data.div, klass)
     else if ($.isFunction(data)) data.call($)
@@ -192,6 +193,8 @@
       var klass = this.rel.match(/facebox\[?\.(\w+)\]?/)
       if (klass) klass = klass[1]
 
+      if (settings.iframe) fillFaceboxFromIFrame(settings.iframe, klass)
+
       fillFaceboxFromHref(this.href, klass, images)
       return false
     }
@@ -306,6 +309,16 @@
       }
     }
     image.src = href
+  }
+
+  function fillFaceboxFromIFrame(data, klass) {
+    var iframe = '<iframe src="' + data.href + '"'
+    if (data.klass)
+        iframe += ' class="' + data.klass + '"'
+    else
+        iframe += ' class="facebox_iframe"'
+    iframe += ' />'
+    $.facebox.reveal(iframe, klass)
   }
 
   function fillFaceboxFromAjax(href, klass) {

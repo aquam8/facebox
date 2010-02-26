@@ -62,9 +62,14 @@ nextImage     : Path to override the default next arrow image for the gallery
 previousImage : Path to override the default previous arrow image for the gallery
 imageTypes    : Array of strings which represent the file extensions to be recognized as images.
 faceboxHtml   : Block of HTML to draw as the Facebox overlay. (this should not be changed unless you know what elements are expected with what CSS attributes).
+iframe        : Load an iframe in the facebox. Requires params like   iframe: { href: "http://some-site.com/", klass: "myframe" } 
 
 
 ## Releases
+
+### 1.5
+Added support for loading iframe hrefs. Contributed by lelutin.
+
 
 ### 1.4
 Merged in jeroenvandijk's changes: Added positionInfo function so localization is easily possible
