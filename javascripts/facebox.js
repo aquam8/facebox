@@ -88,8 +88,8 @@
       positionInfo   : function(position, total) { return position + ' of ' + total },
       loadingImage  : '/images/loading.gif',
       closeImage    : '/images/closelabel.gif',
-      nextImage     : '/images/next.gif',
-      previousImage : '/images/prev.gif',
+      nextImage     : '/images/next.png',
+      previousImage : '/images/prev.png',
       imageTypes    : [ 'png', 'jpg', 'jpeg', 'gif' ],
       faceboxHtml   : '\
     <div id="facebox" style="display:none;"> \
@@ -146,19 +146,16 @@
       $(document).trigger('loading.facebox')
     },
 
-    reveal: function(data, klass, extra_setup) {
+    reveal: function(data, klass) {
       $(document).trigger('beforeReveal.facebox')
       if (klass) $('#facebox .content').addClass(klass)
+      $('#facebox .info').empty()
+      $('#facebox .navigation').empty()
       $('#facebox .content').append(data)
       $('#facebox .loading').remove()
       $('#facebox .body').children().fadeIn('normal')
       $('#facebox').css('left', $(window).width() / 2 - ($('#facebox table').width() / 2))
       $(document).trigger('reveal.facebox').trigger('afterReveal.facebox')
-      if($.isFunction(extra_setup)) {
-        extra_setup.call(this)
-      }
-
-
     },
 
     close: function() {
@@ -175,12 +172,9 @@
     init(settings)
 
     // suck out the images
-    var image_types = $.facebox.settings.imageTypes.join('|')
-    image_types = new RegExp('\.' + image_types + '$', 'i')
-
     var images = []
     $(this).each(function() {
-      if (this.href.match(image_types) && $.inArray(this.href, images) == -1) 
+      if (this.href.match($.facebox.settings.imageTypesRegexp) && $.inArray(this.href, images) == -1) 
         images.push(this.href)
     })
     if (images.length == 1) images = null
@@ -215,7 +209,7 @@
     makeCompatible()
 
     var imageTypes = $.facebox.settings.imageTypes.join('|')
-    $.facebox.settings.imageTypesRegexp = new RegExp('\.(' + imageTypes + ')\??.*$', 'i')
+    $.facebox.settings.imageTypesRegexp = new RegExp("\\.(" + imageTypes + ")(\\?[\\d]+)?$", 'i')
 
     if (settings) $.extend($.facebox.settings, settings)
     $('body').append($.facebox.settings.faceboxHtml)
@@ -294,15 +288,11 @@
   }
 
   function fillFaceboxFromImage(href, klass, images) {
-    if (images){
-      var extra_setup = faceboxSetupGallery(href, klass, images)
-    }
-
     var image = new Image()
     image.onload = function() {
-      $.facebox.reveal('<div class="image"><img src="' + image.src + '" /></div>', klass, extra_setup)
-
+      $.facebox.reveal('<div class="image"><img src="' + image.src + '" /></div>', klass)
       if (images) {
+        faceboxSetupGallery(href, klass, images)
         var position = $.inArray(href, images)
         var next = new Image()
         next.src = images[position+1] ? images[position+1] : images[0]
@@ -335,11 +325,12 @@
       fillFaceboxFromHref(images[where], klass, images)
     }
     
-    return function() {
-      $('#facebox .image').click(function() { jump(position + 1) }).css('cursor', 'pointer');
-      $('#facebox .info').html($.facebox.settings.positionInfo(position + 1, images.length));
-      $('#facebox .navigation').html('<img class="prev" src="' + $.facebox.settings.previousImage + '" alt="Previous"/><img class="next" src="' + $.facebox.settings.nextImage + '" alt="Next"/>').find('img').css('cursor', 'pointer').end().find('.prev').click(function() { jump(position - 1); return false }).end().find('.next').click(function() { jump(position + 1); return false }).end();
-    }
+    $('#facebox .image').click(function() { jump(position + 1) }).css('cursor', 'pointer');
+    $('#facebox .info').html($.facebox.settings.positionInfo(position + 1, images.length));
+    $('#facebox .navigation')
+      .html('<img class="prev" src="' + $.facebox.settings.previousImage + '" alt="Previous"/><img class="next" src="' + $.facebox.settings.nextImage + '" alt="Next"/>')
+      .find('img').css('cursor', 'pointer').end().find('.prev').click(function() { jump(position - 1); return false })
+      .end().find('.next').click(function() { jump(position + 1); return false }).end();
   }
 
   function skipOverlay() {
