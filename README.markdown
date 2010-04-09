@@ -12,6 +12,8 @@ Numbered versions can be found in the 'releases' folder with all included images
 
 Thanks to the following users for their contributions:
 
+[http://github.com/bernardo/](http://github.com/bernardo/)
+
 [http://github.com/jeroenvandijk/](http://github.com/jeroenvandijk/)
 
 [http://github.com/lelutin/](http://github.com/lelutin/)
@@ -70,9 +72,11 @@ Supported options are:
 
 ## Releases
 
+### 1.6
+Multiple fixes in options and regex. Contributed by bernardo.
+
 ### 1.5
 Added support for loading iframe hrefs. Contributed by lelutin.
-
 
 ### 1.4
 Merged in jeroenvandijk's changes: Added positionInfo function so localization is easily possible
