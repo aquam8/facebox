@@ -187,7 +187,7 @@
       var klass = this.rel.match(/facebox\[?\.(\w+)\]?/)
       if (klass) klass = klass[1]
 
-      if (settings.iframe) fillFaceboxFromIFrame(settings.iframe, klass)
+      if (settings && settings.iframe) fillFaceboxFromIFrame(settings.iframe, klass)
 
       fillFaceboxFromHref(this.href, klass, images)
       return false
